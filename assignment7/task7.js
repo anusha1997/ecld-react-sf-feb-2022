@@ -16,14 +16,14 @@ for(let key in obj){
 //ASSIGNMENT 2
 //Given a string , calculate the occurrence of each and every character and print the output.
 
-let string = 'aeroplane';
+let string = 'edstemeee';
 let object = {};
-let count = 1;
+
 for(i = 0; i < string.length; i++){
-   if(!object[string[i]]){
-       object[string[i]] = count;
+   if(object[string[i]] ){
+       object[string[i]] =   object[string[i]] + 1;
    }else {
-       object[string[i]] = count + 1;
+       object[string[i]] = 1;
        
    }
 } 
@@ -71,14 +71,14 @@ console.log(Object.keys(obj1));
 //ASSIGNMENT 5
 //Given two words (small case) if they are anagrams print "TRUE" otherwise "FALSE" 
 
-let string1 = 'end';
-let string2 = 'den';
+let string1 = 'funeral';
+let string2 = 'real fun';
 let n1 =  string1.length;
 let n2 = string2.length;
 
-if(n1 != n2){
-    console.log("false");
-}
+// if(n1 != n2){
+//     console.log("false");
+// }
 
 let a = string1.split('').sort().join('');
 let b = string2.split('').sort().join('');
@@ -122,3 +122,4 @@ let database = [ {
          }
      }
      
+   
