@@ -1,0 +1,32 @@
+<!-- This is tip calculator app
+Show the total bill in h1 tag below the Calculate button default as 0
+And also try to add Validation to it, I mean if there is nothing in any input don't show total bill rather show an validation error -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css"></link>
+    <title>Assignment - 6</title>
+</head>
+<body>
+    <div id="container">
+    <img src="calculator.jpg" id="img"/>
+    <h2>Tip Calculator</h2>
+    <p id="p">Bill Amount</p>
+    <input id="bill-amount" type="number">
+    <p id="p">Percentage Tip</p>
+    <input id="tip" type="number">
+    <p id="p">Tip Amount</p>
+    <input id="tip-amount" type="number">
+    <p id="p1">Total</p>
+    <input id="total" type="number"><br>
+     
+    <button onclick="calculator()" id="btn">CALCULATE</button>
+    <h4><span id="bill"></span></h4>
+</div>
+</body>
+<script src="calculator.js"></script>
+</html>

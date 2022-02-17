@@ -1,0 +1,22 @@
+.para{
+    text-align: center;
+}
+.heading{
+    text-align: center;
+}
+#img {
+    margin-left: 630px;
+    width: 100px;
+    height: 100px;
+}
+.p{
+    text-align: center;
+}
+.button{
+   text-align: center;
+   box-shadow: 4px 3px 8px 1px ;
+   width: fit-content;
+   margin-left: 630px;
+   flex-direction: row;
+   
+}

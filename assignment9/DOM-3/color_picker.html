@@ -1,0 +1,24 @@
+<!-- onClicking any button background color of body should changed respected to that button color and the value after Background Color should be changing dynamically. UI should be similar -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="color_picker.css"></link>
+    <title>Assignment-3</title>
+</head>
+<body>
+    <div class="container">
+    <h1 class="heading">Color Picker</h1>
+    <button  onclick="colorPicker()" class='btn1'>#e0e0e0</button>
+    <button  onclick="colorPicker1()" class='btn2'>#6fcf97</button>
+    <button  onclick="colorPicker2()" class='btn3'>#56ccf2</button>
+    <button  onclick="colorPicker3()" class='btn4'>#bb6bd9</button>
+    <h3 class="h3" id="h3">Background Color : <span class="color" id="color"></span></h3>
+    <p>Try clicking one of the colors above to change the background color of the image !</p>
+</div>
+</body>
+<script src="color_picker.js"></script>
+</html>

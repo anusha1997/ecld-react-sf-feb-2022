@@ -1,0 +1,30 @@
+<!-- t is a basic Traffic light app, onClicking any of the buttons color of the light should be changed accordingly -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="traffic_light.css"></link>
+    <title>Assignment - 4</title>
+</head>
+<body>
+     <div class="body"> 
+   <div class="container">
+    <h1>Traffic Light</h1>
+    <div>
+    <div><button class="btn1" onclick="stops()"  >Stop</button></div><br>
+    <div><button class="btn2" onclick="ready()" >Ready</button></div><br>
+    <div><button class="btn3" onclick="go()"  >Go</button></div><br>
+   </div>
+</div>
+   <div class="container1">
+    <div  id="red" class="circle "></div>
+    <div id="yellow" class="circle" ></div>
+    <div id="green" class="circle" ></div>
+  </div>
+</div> 
+</body>
+<script src="traffic_light.js"></script>
+</html>
