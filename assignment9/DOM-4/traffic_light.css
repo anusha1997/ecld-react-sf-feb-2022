@@ -1,6 +1,9 @@
 *{
     background-color: rgb(113, 204, 235);
 }
+h1{
+    padding-bottom: 10px;
+}
 .btn1{
     background-color: rgb(25, 25, 97);
     border-color: black;

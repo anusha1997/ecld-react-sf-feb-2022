@@ -1,10 +1,10 @@
 //ASSIGNMENT 1
 //Given an array of strings count all the vowel characters
 
-let array = ['anu','manu','ramu','rohan'];
+let array = ['anu','manu','ramu'];
 let count = 0;
 for(let i = 0;i < array.length; i++){
-    for(let j = 0; j < array.length - 1; j++){
+    for(let j = 0; j < array[i].length ; j++){
         if( array[i][j] == 'a'|| array[i][j] == 'e' ||array[i][j] == 'i' ||array[i][j] == 'o' || array[i][j] == 'u' || array[i][j] == 'A' ||
         array[i][j] == 'E' || array[i][j] == 'I' ||array[i][j] == 'O' ||array[i][j] == 'U'){
             count++;

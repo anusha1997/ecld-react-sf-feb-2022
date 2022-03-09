@@ -82,13 +82,13 @@ let matx = [
  //ASSIGNMENT 7
  //Given an array of strings print the snake case of the strings [Assume Small case strings]
 
- let array2 = ["edstem","tech","kochi"];
+ let array2 = ["edstem","tech"];
  let st = '';
 
  for(let i = 0; i < array2.length-1; i++){
          st = st + array2[i] + '_';
  } 
- st = st + array2[2];
+ st = st + array2[1];
  console.log(st);
 
  //ASSIGNMENT 8

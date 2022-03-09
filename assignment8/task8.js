@@ -87,7 +87,11 @@ let user =  {
     skills: [ 'html', 'nodejs'], 
     addSkill: function(skill){
         return this.skills.push(skill)
+    },
+    getSkills:function(){
+        return this.skills
     }
 }
  user.addSkill('react')  
  console.log(user.skills);
+ console.log(user.getSkills());

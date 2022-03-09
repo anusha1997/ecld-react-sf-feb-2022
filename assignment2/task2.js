@@ -51,12 +51,12 @@ if(pin.length == 6){
 
 let WEST = "GUJARATH";
 let EAST = "NAGALAND";
-let SOUTH = "KERALA";
+let SOUTH = "KERALA || kashmir";
 let NORTH = "JAMMU";
 
 let state = "JAMMU";
 console.log('\n');
-if(state == 'KERALA'){
+if(state == 'KERALA || kashmir'){
     console.log(state+ " IS IN SOUTH");
 }else if( state == "GUJARATH"){
     console.log(state+ " IS IN WEST");
