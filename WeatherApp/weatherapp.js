@@ -14,26 +14,22 @@ window.addEventListener('load',function(){
 })
 
 function getData(){
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET','https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=68fd61c35447049dcc6af853dd7c7b80')
-    xhr.send()
-    xhr.onload = function(){
-    
-       var response = JSON.parse(this.response)
-       console.log(response);
-       var temp = response['main']['temp']
-       var desc = response['weather'][0]['description']
-       var hum = response['main']['humidity']
-       var winds = response['wind']['speed']
-       var name = response['name']
-       var icons = response['weather'][0]['icon']
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=68fd61c35447049dcc6af853dd7c7b80')
+    .then(response => response.json())
+    .then(data => {
 
-       descr.innerHTML = desc;
-       city.innerHTML = "Weather in " + name
-       tempe.innerHTML =  temp + "°C"
-       humidity.innerHTML =  "Humidity: " + hum + "%";
-       wind.innerHTML =  "Wind speed: " + winds + " km/h"
-       icon.src = "https://openweathermap.org/img/wn/" + icons + ".png";
-    }
-    
+        var temp = data['main']['temp']
+        var desc = data['weather'][0]['description']
+        var hum = data['main']['humidity']
+        var winds = data['wind']['speed']
+        var name = data['name']
+        var icons = data['weather'][0]['icon']
+ 
+        descr.innerHTML = desc;
+        city.innerHTML = "Weather in " + name
+        tempe.innerHTML =  temp + "°C"
+        humidity.innerHTML =  "Humidity: " + hum + "%";
+        wind.innerHTML =  "Wind speed: " + winds + " km/h"
+        icon.src = "https://openweathermap.org/img/wn/" + icons + ".png";
+    })
 }
