@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    background-color: rgb(243, 104, 99);
+    text-align: center;
+}
+h2{
+    font-size: 34px;
+    color: rgb(31, 3, 3);
+}
+.btn{
+    margin-right: 10px;
+    background-color: rgb(75, 42, 165);
+    color: white;
+    border-radius: 5px;
+}
