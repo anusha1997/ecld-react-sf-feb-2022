@@ -8,7 +8,7 @@ body{
     margin-top: 30px;
     text-align: center;
 }
-h1{
+.h1{
     margin: 0;
     margin-bottom: 15px;
     color: white;
@@ -25,7 +25,7 @@ h1{
     padding: 10px;
     box-sizing: border-box;
 }
-button{
+.butn{
     background-color: rgb(2, 170, 30);
     color: white;
     margin-top: 15px;
@@ -54,20 +54,3 @@ ul li i{
 .crossed-line{
     text-decoration: line-through;
 }
-
-.prev,
-.next {
-  background: rgb(2, 170, 30);
-  border: none;
-  padding: 10px;
-  color: white;
-  margin: 0 10px;
-  cursor: pointer;
-}
-.prev.disabled,
-.next.disabled {
-  pointer-events: none;
-  box-shadow: none;
-  visibility: hidden;
-}
-  

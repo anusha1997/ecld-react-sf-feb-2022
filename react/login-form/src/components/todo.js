@@ -1,7 +1,6 @@
 import React from 'react';
 import './todo.css';
 import { v4 as uuidv4 } from "uuid";
-import Pagination  from './pagination';
 
 
 class Todo extends React.Component {
@@ -11,25 +10,12 @@ class Todo extends React.Component {
             currentItem: '',
             id:uuidv4(),
             list : [],
-            editItem :false,
-            currentPage: 1,
-           
+            editItem :false
         }
     }
-     handlePage = (pageNum) => {
-         const pageNums = pageNum
-        this.setState({
-            currentPage : pageNums
-        })
-     }
-
+   
     render() {
-        const { list, currentPage} = this.state;
-        const perPage = 2;
-        const totalPages = Math.ceil(list.length / perPage);
-
-
-       const handleChange = (event) => {
+       const handleChanges = (event) => {
             this.setState({
                 currentItem :event.target.value
 
@@ -74,46 +60,29 @@ class Todo extends React.Component {
             element.classList.toggle("crossed-line");
         }
 
-       
-         const goToPreviousPage = () => {
-             const page = currentPage - 1;
-             this.setState({
-                currentPage : page
-             })
-         }
-         const goToNextPage = () => {
-            const page = currentPage + 1;
-         
-            this.setState({
-               currentPage : page
-            })
-        }
-        
         return(
         <div className="container">
 
-        <h1>Todo App</h1>
+        <h1 className='h1'>Todo App</h1>
         <div className='input-section'  >
             <input 
             placeholder='Enter Text' 
             type='text' 
             value={this.state.currentItem}
-            onChange={handleChange}/>
-            <button onClick={handleAdd}> {this.state.editItem ? 'Edit' : 'Add'}</button>
+            onChange={handleChanges}/>
+            <button className='butn' onClick={handleAdd}> {this.state.editItem ? 'Edit' : 'Add'}</button>
              </div>
             {
-                list.filter((_, index) => index >= (currentPage - 1) * perPage && index < currentPage * perPage)
-                .map(item =>{
+                this.state.list.map(item =>{
                 return(
                 <ul>
-                <li onClick={handleToggle}>{item.task}<span></span>
+                <li onClick={handleToggle}>{item.task}
                 <i class="fa-solid fa-pen-to-square" onClick={() =>editItem(item.id)}></i>
                 <i class="fa-solid fa-trash-can" onClick={() =>deleteItem(item.id)}></i></li>
                 </ul>
                 )
                 })
             }
-            <Pagination totalPages={totalPages} handlePage = {this.handlePage} goToNextPage={goToNextPage} gotoPreviousPage={goToPreviousPage} currentPage={currentPage} />
         </div>
         )
     }
