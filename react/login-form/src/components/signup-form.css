@@ -1,0 +1,55 @@
+.mains{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 50px 0 50px 0;
+    background-color: #023b1a;
+}
+.sub-mains{
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    width: 35%;
+    padding-top: 30px;
+    border-radius: 60px;
+    background-color: rgb(246, 247, 188);
+}
+label{
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+    
+}
+.status{
+    margin-right: 100px;
+}
+.names{
+    margin-right: 120px;
+}
+.age{
+    margin-right: 130px;
+}
+.address{
+    margin-right: 110px;
+}
+.user{
+    margin-right: 100px;
+}
+.users{
+    margin-right: 50px;
+}
+.but{
+    background-color: rgb(9, 9, 66);
+    color: white;
+    margin-top: 30px;
+    border-radius: 30px;
+    width: 100px;
+}
+.bttn{
+    background-color: rgb(69, 4, 129);
+    color: white;
+    width:70px;
+}
+.form-group{
+    padding: 5px;
+}

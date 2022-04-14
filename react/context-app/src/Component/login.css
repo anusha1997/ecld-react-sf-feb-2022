@@ -85,3 +85,36 @@ a{
 .h3{
     color: red;
 }
+.auth{
+    display: flex;
+  padding: 15px;
+  background-color: rgb(26, 199, 211);
+
+}
+.toggle{
+    margin-left: 1250px;
+    width: 100px;
+    height: 30px;
+background-color: rgb(121, 26, 211) ;
+color: white;
+font-size: 16px;
+
+}
+span{
+    color: rgb(245, 23, 23);
+    font-size: 50px;
+}
+.Logged{
+   color: red;
+   margin-left: 430px;
+   margin-top: 100px;
+}
+.toggled{
+    margin-left: 1250px;
+    width: 100px;
+    height: 30px;
+background-color: rgb(121, 26, 211) ;
+color: white;
+font-size: 16px;
+visibility: hidden;
+}

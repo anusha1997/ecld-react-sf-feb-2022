@@ -1,11 +1,10 @@
 import React from 'react';
 import './login.css';
+import axios from 'axios';
+import { AppContext  } from '../Context/AppContextProvider';
 import profile from './../image/a.png';
 import email from './../image/email.jpg';
 import pass from './../image/pass.png';
-import SignUp from './signup-form';
-import Todo from './todo'
-
 
 class Login extends React.Component{
     constructor(props){
@@ -15,7 +14,8 @@ class Login extends React.Component{
             password:'',
             error:'',
             isLogged: false,
-            isRegister: false
+            isAuth : false,
+            responseData:''
         }
 
     }
@@ -26,47 +26,42 @@ class Login extends React.Component{
          })
         }
     
-     handleLogin  = () => {
-       let olddata = localStorage.getItem('formdata');
-       let oldArr = JSON.parse(olddata)
-       console.log(oldArr,"arr");
-       oldArr.map(arr => {
-     
-               if(arr.userName === this.state.email && (arr.password === this.state.password)) {
-                this.setState({
-                      isLogged : true
-                  })
-
-               } else {
-                this.setState({
-                    error: "Please SignUp before logging in"
-                })
-               }
-       })
-        
-    }
-     handleRegister = () => {
+        handleLogin  = () => {
+            const { toggleAuth, setToken} = this.context
+            axios.post('https://reqres.in/api/login', {
+             email : this.state.email,
+             password : this.state.password
+         })
+         .then((res) => {
+             console.log(res,"data");
+             this.setState({
+                 responseData: res.data.token,
+                 isAuth: toggleAuth(),
+                 
+             });
+             setToken(this.state.responseData)
+            
+         })
+         .catch((error) => console.log(error))
+        }
+        handleRegister = () => {
         this.setState({
             isRegister : true
         })
        
     }
-    
-    render(){
-      if(this.state.isRegister){
-         return(
-            <SignUp/>
-            )
-         }
+        render(){
         return (
-           <div>
-            {
-                this.state.isLogged ? (
             <div>
-                <Todo/>
-            </div>
-            ) : (
-
+            {
+                this.state.isAuth && (
+                    <div>
+                    <h1>Successfully Logged In With Token : <span>{this.context.responseData}</span></h1>
+                 </div>
+               
+                )
+            }
+           <div>
             <div className='main'>
             <div className='sub-main'>
             <div>
@@ -96,11 +91,13 @@ class Login extends React.Component{
                 </div>
                 </div>
             </div>
-             )
-            }
+             
+            
+            </div>
             </div>
             )
-       
+        
     }
 }
+Login.contextType = AppContext;
 export default Login;

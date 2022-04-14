@@ -3,8 +3,10 @@ import './login.css';
 import profile from './../image/a.png';
 import email from './../image/email.jpg';
 import pass from './../image/pass.png';
-import SignUp from './signup-form';
-import Todo from './todo'
+import User from './user';
+import axios from 'axios';
+
+
 
 
 class Login extends React.Component{
@@ -14,8 +16,7 @@ class Login extends React.Component{
             email: '',
             password:'',
             error:'',
-            isLogged: false,
-            isRegister: false
+            token: ''
         }
 
     }
@@ -27,47 +28,27 @@ class Login extends React.Component{
         }
     
      handleLogin  = () => {
-       let olddata = localStorage.getItem('formdata');
-       let oldArr = JSON.parse(olddata)
-       console.log(oldArr,"arr");
-       oldArr.map(arr => {
-     
-               if(arr.userName === this.state.email && (arr.password === this.state.password)) {
-                this.setState({
-                      isLogged : true
-                  })
+         axios.post('https://reqres.in/api/login', {
+          email : this.state.email,
+          password : this.state.password
+      })
+      .then((res) => {
+          console.log(res,"data");
+          this.setState({
+              token: res.data.token
+          })
+      })
+      .catch((error) => console.log(error))
+     }
 
-               } else {
-                this.setState({
-                    error: "Please SignUp before logging in"
-                })
-               }
-       })
-        
-    }
-     handleRegister = () => {
-        this.setState({
-            isRegister : true
-        })
-       
-    }
     
     render(){
-      if(this.state.isRegister){
-         return(
-            <SignUp/>
-            )
-         }
+        if(this.state.token){
+            return <User/>
+        
+        }
         return (
-           <div>
-            {
-                this.state.isLogged ? (
-            <div>
-                <Todo/>
-            </div>
-            ) : (
-
-            <div className='main'>
+        <div className='main'>
             <div className='sub-main'>
             <div>
                 <h3 className='h3'>{this.state.error}</h3>
@@ -96,10 +77,9 @@ class Login extends React.Component{
                 </div>
                 </div>
             </div>
-             )
-            }
-            </div>
-            )
+             
+        )
+            
        
     }
 }

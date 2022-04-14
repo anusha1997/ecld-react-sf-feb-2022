@@ -1,0 +1,61 @@
+
+.user-container{
+    text-align: center;
+}
+.git{
+    font-size: 50px;
+    color: green;
+}
+.search{
+    padding: 5px;
+    margin-right: 10px;
+}
+.userSearch{
+    padding: 5px;
+    background-color: rgb(7, 7, 97);
+    color: white;
+    font-weight: bold;
+}
+.display{
+    display: inline-table;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: center;
+    height: 200px;
+    width: 250px;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207,207);
+    border-radius: 30px;
+    background-color: rgb(228, 236, 197);
+}
+.more{
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(191, 4, 238);
+    color: white;
+    width: 70px;
+    height: 30px;
+    font-family: 'Times New Roman', Times, serif ;
+   }
+   .popup{
+      
+       height: 200px;
+   }
+   .avatar{
+       margin-top: 20px;
+   }
+   .id{
+       margin-left: 90px;
+   }
+   table, th, td {
+    border: 2px solid green;
+    margin-left: 400px;
+    margin-top: 30px;
+    width: 500px;
+   
+  }

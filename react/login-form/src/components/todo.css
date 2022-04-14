@@ -54,3 +54,9 @@ ul li i{
 .crossed-line{
     text-decoration: line-through;
 }
+.logged{
+    text-align: right ;
+    margin-left: 400px;
+    padding-bottom: 50px;
+    
+}

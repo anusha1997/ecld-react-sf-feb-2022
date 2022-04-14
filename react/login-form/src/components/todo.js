@@ -1,6 +1,7 @@
 import React from 'react';
 import './todo.css';
 import { v4 as uuidv4 } from "uuid";
+import Login from './login';
 
 
 class Todo extends React.Component {
@@ -10,11 +11,18 @@ class Todo extends React.Component {
             currentItem: '',
             id:uuidv4(),
             list : [],
-            editItem :false
+            editItem :false,
+            loggedOut:false
         }
+    }
+    handleLogged = () => {
+        this.setState({
+            loggedOut :true
+        })
     }
    
     render() {
+       
        const handleChanges = (event) => {
             this.setState({
                 currentItem :event.target.value
@@ -60,7 +68,14 @@ class Todo extends React.Component {
             element.classList.toggle("crossed-line");
         }
 
-        return(
+        if(this.state.loggedOut){
+            return(
+                 <Login/>
+            )
+                 
+           }
+        return (
+           <div>
         <div className="container">
 
         <h1 className='h1'>Todo App</h1>
@@ -83,6 +98,12 @@ class Todo extends React.Component {
                 )
                 })
             }
+           
+            
+        </div>
+        <div className='logged'>
+            <button  onClick={this.handleLogged}>LOGOUT</button> 
+            </div>
         </div>
         )
     }
