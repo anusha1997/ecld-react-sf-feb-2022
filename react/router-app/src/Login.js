@@ -6,8 +6,7 @@ export default class Login extends React.Component{
         return(
             <div>
 
-           <h1>Welcome to Login Page</h1>
-                
+           <img width='1500px' height='570px' src='login.jpg'></img>   
             </div>
         )
     }

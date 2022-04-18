@@ -6,8 +6,7 @@ export default class Contact extends React.Component{
         return(
             <div>
 
-           <h1>Welcome to Contact Page</h1>
-                
+           <img width='1500px' height='570px' src='contact.jpg'/>    
             </div>
         )
     }

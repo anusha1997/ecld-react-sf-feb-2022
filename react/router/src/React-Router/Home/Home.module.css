@@ -1,0 +1,29 @@
+.head{
+    text-align: center;
+    font-size: 50px;
+}
+.main{
+    margin-top: 0px;
+    text-align: center;
+    font-size: 20px;
+}
+.img{
+    width: 500px;
+    display: block;
+    margin: auto;
+
+}
+
+
+button{
+    padding: 5px 15px;
+    color: white;
+    margin: 30px auto;
+    border-radius: 3px;
+    background: #1762c4;
+    width: 170px;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 600px;
+}

@@ -5,8 +5,7 @@ export default class Service extends React.Component{
     render() {
         return(
             <div>
-
-           <h1>Welcome to Service Page</h1>
+           <img width='1500px' height='570px' src='service.jpg'/> 
                 
             </div>
         )

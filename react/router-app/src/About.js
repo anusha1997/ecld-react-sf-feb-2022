@@ -6,8 +6,7 @@ export default class About extends React.Component{
         return(
             <div>
 
-           <h1>Welcome to About Page</h1>
-                
+           <img width='1500px' height='570px' src='about.jpeg'/>  
             </div>
         )
     }

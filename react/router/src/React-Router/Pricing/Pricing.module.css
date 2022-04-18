@@ -1,0 +1,21 @@
+.main{
+    width: 140px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    padding-right: 10px;
+    font-size: 20px;
+}
+.desc{
+    font-size: 20px;
+    text-align: center;
+}
+.flexbox{
+    display: flex;
+    padding-left: 120px;
+    padding-right: 150px;
+    text-align: center;
+}
+img{
+    width: 250px;
+}

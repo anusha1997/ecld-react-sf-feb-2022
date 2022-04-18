@@ -1,0 +1,22 @@
+.head{
+    margin: 30px auto;
+
+}
+h1{
+    text-align: center;
+    margin: 0px auto;
+    padding: 0px auto;
+    color: rgb(70,70,70);
+}
+br{
+    margin: 100px;
+    height: 1px;
+    background-color: #eee;
+    border: none;
+}
+.flexbox{
+    display: flex;
+    width: 60%;
+    padding-left: 200px;
+    padding-right: 50px;
+}
