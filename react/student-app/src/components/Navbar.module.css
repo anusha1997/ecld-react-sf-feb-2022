@@ -1,0 +1,22 @@
+.Navmain{
+    padding: 20px;
+    display: flex;
+    text-align: right;
+    font-family: inter,serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(3, 53, 70);
+    color: rgb(158, 107, 230);
+    text-align: left;
+    width: 1350px;
+    position: absolute;
+}
+.Link{
+    margin-left: 300px;
+
+}
+.Linknav{
+ margin-left: 120px;
+text-decoration: none;
+font-size: 20px;
+  color: white;
+}

@@ -1,0 +1,80 @@
+
+
+   .main{
+   
+    height: 650px;
+   }
+  .studentsMain {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+   padding: 10px;
+  }
+  
+  .studentMain {
+    border: 0px solid #17a2b8;
+    text-align: center;
+    cursor: pointer;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    background-color: rgb(173, 247, 173);
+  }
+  
+  .show-details {
+    background-color: rgb(153, 219, 245);
+    color: black;
+    text-align: center;
+    width: 30%;
+    margin-left: 400px;
+    margin-top: 5px;
+    margin-bottom: 200px;
+    font-size: 20px;  }
+  
+  .input {
+    width: 90%;
+    padding: 80px;
+  }
+  
+  .user-input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 40%;
+    margin-left: 300px;
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  
+  .search-btn {
+    margin: 10px;
+    padding: 8px;
+    background-color: #17a2b8;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 10%;
+    border-radius: 10px;
+  }
+  
+  .details-btn{
+      padding: 5px;
+      border-radius: 5px;
+      background-color: #17a2b8;
+      color: white;
+}
+button{
+    padding: 5px;
+    margin-right: 10px;
+    background-color: violet;
+}
+.back{
+    margin-top: 70px;
+    margin-left: 20px;
+}
+  
+  
+  
+  
+  
+  
