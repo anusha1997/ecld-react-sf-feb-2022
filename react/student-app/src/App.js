@@ -1,16 +1,18 @@
 import React from 'react';
-import Navbar from './components/Navbar';
 import Routing from './Router/Router';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { AuthProvider}  from './Router/auth';
 
 function App() {
   return (
-    <div>
-      <Navbar/>
+    <AuthProvider>
+    <Navbar/> 
       <Routing/>
       <Footer/>
-    </div>
-  );
+      </AuthProvider>
+     
+    );
 }
 
 export default App;

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Student.css";
+import styles from  "./Student.module.css";
 import {  useNavigate} from 'react-router-dom';
+import { useAuth } from "../auth";
 
 export const Student = () => {
 
   const[ data, setData ] = useState([]);
-  const[ details, setDetails ] = useState([]);
   const[ name, setName ] = useState("");
-  const[ showDetails, setShowDetails] = useState(false);
   const[ currentPage, setCurrentPage] = useState(0);
   const [pageLimit] = useState(4);
  
@@ -16,6 +15,10 @@ export const Student = () => {
   const[ sortValue, setSortvalue] = useState("");
   const sortOptions = ["first_name", "email","city"]
   const navigate = useNavigate();
+
+  const auth = useAuth();
+ 
+
   useEffect(() => {
     handleStudents(0,4, 0);
   }, []);
@@ -43,22 +46,6 @@ const handleReset = () =>{
     setName(event.target.value)
   };
 
- const handleDetails = (id) => {
-    axios.get("https://student-server-deploy.herokuapp.com/students/" + id)
-      .then((res) => {
-        setDetails(res.data)
-        setShowDetails(true)
-      }
-        )
-        .catch((err) => {
-          console.log(err);
-        });
-  };
-
-const  close = () => {
-    setShowDetails(false)
-
-  };
 
  const handleStudents = (start, end , increase, optType=null, sort) => {
    switch(optType){
@@ -74,7 +61,7 @@ const  close = () => {
       .catch((error) => console.log(error));
     
       default:
-    axios.get(`https://student-server-deploy.herokuapp.com/students?_start=${start}&_end=${end}`)
+     axios.get(`https://student-server-deploy.herokuapp.com/students?_start=${start}&_end=${end}`)
       .then((result) => 
       {
          setData(result.data)
@@ -82,7 +69,7 @@ const  close = () => {
       })
       
       .catch((error) => console.log(error));
-    }
+     }
   }
 
   const handleSort = (e) => {
@@ -91,6 +78,12 @@ const  close = () => {
     handleStudents(0,4,0, "sort", value)
     
   }
+
+  const handleLogout = () =>{
+    auth.logout()
+    navigate('/')
+  }
+ 
 
   const pagination = () => {
     if(data.length < 4 && currentPage === 0) return null;
@@ -118,45 +111,31 @@ const  close = () => {
       )
     }
   }
+
+ console.log(data,"data");
     return (
-        <div className="main">
-          <div className="input">
-            <input className="user-input" placeholder="Search Student" onChange={handleChange} value={name}
+        <div className={styles.main}>
+          <div className={styles.input}>
+            <input className={styles.user_input} placeholder="Search Student" onChange={handleChange} value={name}
             />
-            <button className="search-btn" onClick={handleSearch}>
+            <button className={styles.search_btn} onClick={handleSearch}>
               Search
             </button>
-            <button className="search-btn" onClick={handleReset}>
+            <button className={styles.search_btn} onClick={handleReset}>
               Reset
             </button>
+            {/* {auth.user} */}
+              <button className={styles.log} onClick={handleLogout}>Logout</button>
           </div>
-
-          <div className="details-container">
-            {
-            showDetails && (
-              <div className="show-details">
-                <div>
-                 <button className="close" onClick={close}>
-                    X
-                  </button> 
-                </div>
-                <img src={details.avatar} alt="" />
-                <div>{details.title}. {details.first_name} {details.last_name}</div>
-                <div>{details.email}</div>
-                <div>{details.address}</div>
-                <div>{details.city}</div>
-              </div>
-            )}
-          </div>
-
-          <div className="studentsMain">
+          
+          <div className={styles.studentsMain}>
             {
             data && data.map((item) => {
                 return (
-                  <div className="studentMain" key={item.id}>
+                  <div className={styles.studentMain} key={item.id}>
                     <img src={item.avatar} alt="" />
                     <h2>{item.title}. {item.first_name} {item.last_name}</h2>
-                    <button className="details-btn" onClick={() => navigate(`${item.id}`)}>
+                    <button className={styles.details_btn} onClick={() => navigate(`${item.id}`)}>
                       View More
                     </button>
                   </div>
@@ -185,8 +164,12 @@ const  close = () => {
                 }
           </select>
         </div>
-        </div>
+        
+      </div>
+        
     );
+     
+    
 
 }
 export default Student;

@@ -22,7 +22,7 @@
     background-color: rgb(173, 247, 173);
   }
   
-  .show-details {
+  .show_details {
     background-color: rgb(153, 219, 245);
     color: black;
     text-align: center;
@@ -37,7 +37,7 @@
     padding: 80px;
   }
   
-  .user-input {
+  .user_input {
     padding: 10px;
     border-radius: 5px;
     width: 40%;
@@ -46,7 +46,7 @@
     text-transform: capitalize;
   }
   
-  .search-btn {
+  .search_btn {
     margin: 10px;
     padding: 8px;
     background-color: #17a2b8;
@@ -57,7 +57,7 @@
     border-radius: 10px;
   }
   
-  .details-btn{
+  .details_btn{
       padding: 5px;
       border-radius: 5px;
       background-color: #17a2b8;
@@ -72,7 +72,18 @@ button{
     margin-top: 70px;
     margin-left: 20px;
 }
-  
+.log{
+  background-color: red;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 7%;
+  border-radius: 10px;
+  margin-left: 25px;
+  padding: 8px;
+ 
+ 
+}
   
   
   

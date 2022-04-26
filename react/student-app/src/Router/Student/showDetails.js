@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useState, useEffect}from 'react';
 import { useParams ,useNavigate} from 'react-router-dom';
-import "./Student.css";
+import styles from "./Student.module.css";
 
 function Details  () {
     const { id } = useParams();
@@ -23,10 +23,10 @@ function Details  () {
  
     return(
       <div>
-     <button className='back' onClick={() => navigate(-1)}>Back</button>
+     <button className={styles.back} onClick={() => navigate(-1)}>Back</button>
      
-        <div className="details-container">
-        <div className="show-details">
+        <div className={styles.details_container}>
+        <div className={styles.show_details}>
         <img src={details.avatar} alt="" />
             <div>{details.title}. {details.first_name} {details.last_name}</div>
             <div>{details.email}</div>

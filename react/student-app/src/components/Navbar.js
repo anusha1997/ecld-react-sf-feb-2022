@@ -6,6 +6,7 @@ var Links = [{ to:"/", title:"Home"},
             { to:"/about", title:"About"},
             {to:"/contact", title:"Contact"},
             {to: "/student", title:"Student"},
+            {to: "/login", title:"Login"}
          ]
 const Navbar = () => {
     return(

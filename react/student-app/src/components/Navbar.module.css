@@ -8,7 +8,7 @@
     color: rgb(158, 107, 230);
     text-align: left;
     width: 1350px;
-    position: absolute;
+    position: fixed;
 }
 .Link{
     margin-left: 300px;

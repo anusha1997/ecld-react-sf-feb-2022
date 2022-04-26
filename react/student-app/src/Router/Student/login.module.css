@@ -1,0 +1,56 @@
+
+.button{
+    margin-top: 50px;
+    padding: 10px;
+    margin-left: 50px;
+    background-color: #17a2b8;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 20%;
+    cursor: pointer;
+}
+.loginMain{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 25px;
+    margin-left: 300px;
+    margin-top: 10px;
+    margin-bottom: 470px;
+}
+.login{
+    text-align: center;
+    cursor: pointer;
+    margin-top: 100px;
+    position: absolute;
+    margin-left: 100px;
+    border: 0px solid #17a2b8;
+    text-align: center;
+    cursor: pointer;
+    padding-bottom: 20px;
+    background-color: rgb(173, 247, 173);
+   width: 500px;
+}
+.input{
+    background-color: #a4eaf5;
+    color: black;
+    align-items: center;
+    margin-left: 30px;
+    width: 400px;
+    height: 20px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.inputs{
+    background-color: #a4eaf5;
+    color: black;
+    align-items: center;
+    margin-left: 30px;
+    margin-top: 10px;
+    width: 400px;
+    height: 20px;
+    margin-left: 10pxs;
+    padding: 10px;
+}
+
+
